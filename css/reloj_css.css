@@ -1,0 +1,89 @@
+#container{
+    width: 100%;
+    display: grid;
+    place-content: center;
+    padding-top: 100px;
+}
+/* dibuja reloj contorno , fondo  medidas y posición*/
+#clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+    border: 10px solid rgb(28, 49, 28);
+    position: relative;
+    background-image:url(/img/flores.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* estilos generales de la clase agujas hora, minutos y segundos*/
+  .hand {
+    position: absolute;
+    transform-origin: bottom center;
+    background-color: black;
+  }
+
+  /*Estilo de la aguja hora: ubicación, largo, ancho y animación 
+  de rotación infinita sin cambios de velocidas -> 12hs = 43200s */
+  #hour {
+    width: 6px;
+    height: 60px;
+    top: 100px;
+    left: 147px;
+    animation: rotate-hour 43200s linear infinite; /* rotate-hour: nombre del atributo animation-name de la aguja hora */
+  }
+
+  /*Estilo de la aguja minutos: ubicación, largo, ancho y animación 
+  de rotación infinita sin cambios de velocidas -> 1h = 60 min  = 3600s */
+  #minute {
+    width: 4px;
+    height: 90px;
+    top: 70px;
+    left: 148px;
+    animation: rotate-minute 3600s linear infinite;  /* rotate-minute: nombre del atributo animation-name de la aguja minuto */
+  }
+
+  /*Estilo de la aguja segundos: ubicación, largo, ancho  y color por cascada 
+  y animación de rotación infinita sin cambios de velocidas -> 1min  = 60s */
+
+  #second {
+    width: 2px;
+    height: 120px;
+    top: 40px;
+    left: 149px;
+    animation: rotate-second 60s linear infinite; /* rotate-second: nombre del atributo animation-name de la aguja segundos */
+    background-color: rgb(107, 35, 35);
+  }
+
+  /* animación agujas css 
+  ------------------------*/ 
+
+  /* rotacion 360ª aguja hora desde la ubicación 0deg = 12 */
+  @keyframes rotate-hour {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+   /* rotacion 360ª aguja minutos  desde la ubicación 0deg = 12*/
+  @keyframes rotate-minute {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+   /* rotacion 360ª aguja segundos  desde la ubicación 0deg = 12*/
+  @keyframes rotate-second {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
